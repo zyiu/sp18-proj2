@@ -1,6 +1,9 @@
 <%= simple_form_for @listing do |f| %>
   <%= f.input :price %>
   <%= f.input :description %>
+  <%= f.input :longitude %>
+  <%= f.input :latitude %>
+  <%= f.input :address %>
   <%= f.input :topic %>
   <%= f.button :submit, class: "create-listing-btn"%>
 <% end %>

@@ -3,10 +3,13 @@ class HomeController < ApplicationController
 
   def index
     @user = current_user
-    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude
+    @listings = Listing.all
+    @hash = Gmaps4rails.build_markers(@listings) do |list, marker|
+      marker.lat list.latitude
+      marker.lng list.longitude
     end
+    puts("hash")
+    puts(@hash.join(", "))
   end
 
 end

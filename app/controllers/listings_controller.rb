@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.create(price: params[:listing][:price], description: params[:listing][:description], topic: params[:listing][:topic], user: current_user)
+    @listing = Listing.create(price: params[:listing][:price], description: params[:listing][:description], topic: params[:listing][:topic], address: params[:listing][:address], user: current_user)
     if @listing.save
       redirect_to root_path
     else

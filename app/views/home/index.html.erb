@@ -11,6 +11,9 @@
     <p>Posted by: <%= listing.user.email %></p>
     <p>Topic: <%= listing.topic %></p>
     <p>Price: <%= listing.price %></p>
+    <p>Latitude: <%= listing.latitude %></p>
+    <p>Longitude: <%= listing.longitude %></p>
+    <p>Address: <%= listing.address %></p>
     <p>Description: <%= listing.description %></p>
     <p>-----------------------</p>
   <% end %>
@@ -20,7 +23,18 @@
   <script>
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function() {
-    markers = handler.addMarkers("<%=raw @hash.to_json %>");
+    markers = handler.addMarkers([
+    {
+      "lat": 0,
+      "lng": 0,
+      "picture": {
+        "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+        "width":  32,
+        "height": 32
+      },
+      "infowindow": "hello!"
+    }
+  ]);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
   });
