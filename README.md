@@ -11,7 +11,7 @@ Listing
 * has location, price, and description text
 
 User  
-* has name, email, many comments/messages/favorites
+* has name, email, many comments/favorites
 * Users have rating, many listings
 
 Favorites
@@ -20,16 +20,13 @@ Favorites
 Comments
 * has listing id, user_from id, time, and body
 
-Messages
-* has user_to id, user_from id, time, and body
-
 **Features**:
 * Users can log in
 * Sublessor Users can create listings
 * Users can save listings
 * Users can comment on listings
 * Users can view comments on listings
-* Users can rate Sublessor Users
+* Users can rate Users
 
 **Gems**:
 * gmaps4rails https://rubygems.org/gems/gmaps4rails
