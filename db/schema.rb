@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180413015405) do
     t.integer "price"
     t.text "description"
     t.string "topic"
+    t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

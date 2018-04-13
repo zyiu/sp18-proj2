@@ -4,6 +4,7 @@ class CreateListings < ActiveRecord::Migration[5.1]
       t.integer :price
       t.text :description
       t.string :topic
+      t.string :user_id
 
       t.timestamps
     end
