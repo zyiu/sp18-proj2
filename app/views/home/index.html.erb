@@ -1,5 +1,4 @@
-<script src="//maps.google.com/maps/api/js?key=AIzaSyDK_s3c_FLnlzjlGsRjKhN0Cg1oqIzB6aE
-"></script>
+<script src="//maps.google.com/maps/api/js?key=AIzaSyDK_s3c_FLnlzjlGsRjKhN0Cg1oqIzB6aE"></script>
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 <h2>Welcome to BEAR PARKING!</h2>
 <% if user_signed_in? %>
@@ -20,19 +19,8 @@
   </div>
   <script>
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers([
-      {
-        "lat": 0,
-        "lng": 0,
-        "picture": {
-          "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-          "width":  32,
-          "height": 32
-        },
-        "infowindow": "hello!"
-      }
-    ]);
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function() {
+    markers = handler.addMarkers("<%=raw @hash.to_json %>");
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
   });
