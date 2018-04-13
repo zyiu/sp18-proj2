@@ -2,6 +2,7 @@
 <% if user_signed_in? %>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   <p>Logged in as: <%= @user.email if @user.email %></p>
+  <%= link_to('See All Listings', listings_show_path, method: :get) %>
   <h3>Your Listings:</h3>
   <%= link_to('Create new Listing', listings_new_path, method: :get) %>
   <p><% @user.listings.each do |listing| %></p>

@@ -12,4 +12,8 @@ class ListingsController < ApplicationController
       redirect_to listings_new_path
     end
   end
+
+  def show
+    @listing = Listing.all
+  end
 end

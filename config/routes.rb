@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :users
    get '/listings/new', to: "listings#new"
    post '/listings', to: "listings#create"
+   get '/listings/show', to: "listings#show"
 end

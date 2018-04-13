@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <h3>All Listings</h3>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    <%= link_to('Go to Home', root_path, method: :get) %>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @listing.each do |list| %>
+            <tr>
+              <p>Posted by: <%= list.user.email %></p>
+              <p>Topic: <%= list.topic %></p>
+              <p>Price: <%= list.price %></p>
+              <p>Description: <%= list.description %></p>
+              <p>-----------------------</p>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
