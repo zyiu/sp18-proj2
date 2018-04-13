@@ -12,8 +12,7 @@ Listing
 
 User  
 * has name, email, many comments/messages/favorites
-* Sublessor Users have rating, many listings
-* certain users are Sublessors and can post listings
+* Users have rating, many listings
 
 Favorites
 * has listing id, user id
@@ -31,10 +30,9 @@ Messages
 * Users can comment on listings
 * Users can view comments on listings
 * Users can rate Sublessor Users
-* Users can message Sublessor Users
 
 **Gems**:
-* google_maps_service https://rubygems.org/gems/google_maps_service
+* gmaps4rails https://rubygems.org/gems/gmaps4rails
 
 **Division of Labor**:
 * Debbie: Controllers part of Models

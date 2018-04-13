@@ -1,6 +1,14 @@
+<h3>Welcome to BEAR PARKING!</h3>
 <% if user_signed_in? %>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  <h3>Welcome to PARKING!</h3>
+  <h5>Profile: </h5>
+  <p>Name: <%= @user.name if @user.name %></p>
+  <p>Email: <%= @user.email if @user.email %></p>
+  <p><% @user.listings.each do |listing| %></p>
+    <p>Topic: <%= listing.topic %></p>
+    <p>Price: <%= listing.price %></p>
+    <p>Description: <%= listing.description %></p>
+  <% end %>
 <% else %>
   <%= link_to('Login', new_user_session_path)  %>
 <% end %>
