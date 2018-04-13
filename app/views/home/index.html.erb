@@ -1,3 +1,6 @@
+<script src="//maps.google.com/maps/api/js?key=AIzaSyDK_s3c_FLnlzjlGsRjKhN0Cg1oqIzB6aE
+"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 <h2>Welcome to BEAR PARKING!</h2>
 <% if user_signed_in? %>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
@@ -12,6 +15,28 @@
     <p>Description: <%= listing.description %></p>
     <p>-----------------------</p>
   <% end %>
+  <div style='width: 800px;'>
+    <div id="map" style='width: 800px; height: 400px;'></div>
+  </div>
+  <script>
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
+        "lat": 0,
+        "lng": 0,
+        "picture": {
+          "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+          "width":  32,
+          "height": 32
+        },
+        "infowindow": "hello!"
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+  </script>
 <% else %>
   <%= link_to('Login', new_user_session_path)  %>
 <% end %>
