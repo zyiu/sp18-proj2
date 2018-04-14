@@ -10,7 +10,7 @@
   <p><% @user.listings.each do |listing| %></p>
     <p>Posted by: <%= listing.user.email %></p>
     <p>Topic: <%= listing.topic %></p>
-    <p>Price: <%= listing.price %></p>
+    <p>Price: $<%= listing.price %></p>
     <p>Latitude: <%= listing.latitude %></p>
     <p>Longitude: <%= listing.longitude %></p>
     <p>Address: <%= listing.address %></p>
@@ -25,17 +25,19 @@
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function() {
     markers = handler.addMarkers([
     {
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.7749295,
+      "lng": -122.4194155,
       "picture": {
-        "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-        "width":  32,
-        "height": 32
+        "url": "http://www.clker.com/clipart-google-pushpin.html",
+        "width":  100,
+        "height": 100
       },
       "infowindow": "hello!"
     }
   ]);
     handler.bounds.extendWith(markers);
+    // markers = handler.addMarkers("<%= @hash.to_json %>");
+    // handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
   });
   </script>
