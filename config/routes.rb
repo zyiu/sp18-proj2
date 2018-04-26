@@ -8,4 +8,5 @@ Rails.application.routes.draw do
    post '/listings/create', to: "listings#create"
    get '/listings/:id', to: 'listings#show'
    get '/listings', to: "listings#index"
+   patch '/favorite', to: "listings#add_favorite"
 end
