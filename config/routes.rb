@@ -12,4 +12,5 @@ Rails.application.routes.draw do
    get '/listings/:id', to: 'listings#show'
    post '/comments/new', to: 'comments#new'
    
+   patch '/favorite', to: "listings#add_favorite"
 end

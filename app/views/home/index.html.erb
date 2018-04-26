@@ -74,6 +74,7 @@
            </div>
            <div class="card-action">
              <a href="">Details</a>
+             <%= button_to "💖", favorite_path(id: listing), :class => "button medium", :method => :patch %>Favorites: <%= listing.num_favorites %>
            </div>
          </div>
        </div>
@@ -82,6 +83,7 @@
     </div>
   <% end %>    
 </div>
+
 
 <div id="map"></div>
 <script>

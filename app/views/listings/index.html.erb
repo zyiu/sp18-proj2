@@ -35,6 +35,7 @@
                <div class="card-action">
                  <a href="#">Favorite</a>
                  <%= link_to "Details", listing_path(listing) %>
+                 <%= button_to "💖", favorite_path(id: listing), :class => "button medium", :method => :patch %>Favorites: <%= listing.num_favorites %>
                </div>
             </div>          
           </div>
