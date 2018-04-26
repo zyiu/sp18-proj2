@@ -46,5 +46,5 @@ INTRODUCED IN CLASS:
 * underscore-rails https://rubygems.org/gems/underscore-rails
 
 **Division of Labor**:
-* Debbie: Debbie worked on the making the functionality for Users, Favorites, and Listings (including views, controllers, models) and making everything work together.
-* Zachary: Zachary worked on styling the Views that Debbie worked on and made the functionality work for Comments. 
+* Debbie: Debbie worked on the making the functionality for Users, Favorites, and Listings (including views, controllers, models) and making everything work together. Debbie started linking the map with the listings.
+* Zachary: Zachary worked on styling the Views that Debbie worked on and made the functionality work for Comments. Zachary also made the demo video and finished linking the map to the listings. 
