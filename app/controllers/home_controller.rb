@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   def index
     @user = current_user
     @listings = Listing.all
+    @listing = Listing.new
     # @hash = Gmaps4rails.build_markers(@listings) do |list, marker|
     #   marker.lat list.latitude
     #   marker.lng list.longitude

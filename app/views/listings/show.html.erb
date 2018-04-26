@@ -5,7 +5,7 @@
 
 <nav>
   <div class="nav-wrapper light-blue darken-4">
-    <a href="/listings/list" class="brand-logo "><div class="logo-bear">Bear</div><div class="logo-park">Park</div></a>
+    <a href="/listings" class="brand-logo "><div class="logo-bear">Bear</div><div class="logo-park">Park</div></a>
     <ul class="right hide-on-med-and-down">
       <% if user_signed_in? %>
         <!-- <li><%= link_to('New Listing', listings_new_path, method: :get) %></li> -->
@@ -28,6 +28,9 @@
        <li>Price: $<%= @listing.price %></li>
        <li>Description: <%= @listing.description %></li>
      </div>
-  </div>          
+     <% @listing.comments.each do |c| %>
+       <p>c.body</p>
+     <% end %>
+  </div>
 </div>
 </div>

@@ -5,11 +5,9 @@
 
 <nav>
   <div class="nav-wrapper light-blue darken-4">
-    <a href="/listings/list" class="brand-logo "><div class="logo-bear">Bear</div><div class="logo-park">Park</div></a>
+    <a href="/listings" class="brand-logo "><div class="logo-bear">Bear</div><div class="logo-park">Park</div></a>
     <ul class="right hide-on-med-and-down">
       <% if user_signed_in? %>
-        <!-- <li><%= link_to('New Listing', listings_new_path, method: :get) %></li> -->
-        <!-- <li><a class="modal-trigger btn light-blue" href="#modal1">New Listing</a></li> -->
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><%= @user.email if @user.email %><i class="material-icons right">arrow_drop_down</i></a></li>
       <% else %>
         <li><%= link_to('Login', new_user_session_path)  %></li>

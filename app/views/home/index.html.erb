@@ -2,24 +2,11 @@
   <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
 </ul>
 
-<nav>
-  <div class="nav-wrapper light-blue darken-4">
-    <a href="/listings" class="brand-logo "><div class="logo-bear">Bear</div><div class="logo-park">Park</div></a>
-    <ul class="right hide-on-med-and-down">
-      <% if user_signed_in? %>
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><%= @user.email if @user.email %><i class="material-icons right">arrow_drop_down</i></a></li>
-      <% else %>
-        <li><%= link_to('Login', new_user_session_path)  %></li>
-      <% end %>
-    </ul>
-  </div>
-</nav>
-
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
   <div class="modal-content">
     <%= simple_form_for Listing.new do |f| %>
-    <div class="row">
+      <div class="row">
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
@@ -41,16 +28,29 @@
               <%= f.input :topic %>
             </div>
           </div>
-           
-        </form>
+        
       </div>
       <div class="modal-footer">
         <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
         <%= f.button :submit, class: "modal-action modal-close waves-effect waves-green btn-flat"%>
       </div>
+      </form>
     <% end %>
   </div>
 </div>
+
+<nav>
+  <div class="nav-wrapper light-blue darken-4">
+    <a href="/listings" class="brand-logo "><div class="logo-bear">Bear</div><div class="logo-park">Park</div></a>
+    <ul class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><%= @user.email if @user.email %><i class="material-icons right">arrow_drop_down</i></a></li>
+      <% else %>
+        <li><%= link_to('Login', new_user_session_path)  %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
 
 <div class="listing-container">
   <% if user_signed_in? %>
@@ -70,8 +70,6 @@
              <li>Posted by: <%= listing.user.email %></li>
              <li>Topic: <%= listing.topic %></li>
              <li>Price: $<%= listing.price %></li>
-             <!-- <li>Latitude: <%= listing.latitude %></li>
-             <li>Longitude: <%= listing.longitude %></li> -->
              <li>Description: <%= listing.description %></li>
            </div>
            <div class="card-action">
