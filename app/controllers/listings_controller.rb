@@ -13,7 +13,8 @@ class ListingsController < ApplicationController
     end
   end
 
-  def show
+  def list
     @listing = Listing.all
+    @user = current_user
   end
 end

@@ -11,7 +11,13 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require underscore
 //= require gmaps/google
+//= require jquery
+//= require materialize
 //= require_tree .
+
+$(document).ready(function() {
+  $('.dropdown-trigger').dropdown();
+  $('.modal').modal();
+});

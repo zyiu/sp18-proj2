@@ -1,3 +1,35 @@
 // Place all the styles related to the listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  
+}
+
+.listing-container {
+  float:left;
+  width: 500px;
+  height: calc(100vh - 64px);
+  overflow: auto
+}
+
+#map {
+  float:right;
+  width: calc(100% - 500px);
+  height: calc(100vh - 64px);
+}
+
+#title-all_listings {
+  margin-left: 0.5em;
+}
+
+#title-your_listings {
+  margin-left: 0.5em;
+}
+
+#button-new_listing {
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+  // float: right;
+  // margin-right: 96px;
+}
