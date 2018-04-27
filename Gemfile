@@ -40,6 +40,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass', '~> 1.0.0.beta'
 gem 'material_icons' 
 gem 'jquery-rails'
+gem 'seed_dump'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
