@@ -8,8 +8,6 @@
     <a href="/listings" class="brand-logo "><div class="logo-bear">Bear</div><div class="logo-park">Park</div></a>
     <ul class="right hide-on-med-and-down">
       <% if user_signed_in? %>
-        <!-- <li><%= link_to('New Listing', listings_new_path, method: :get) %></li> -->
-        <!-- <li><a class="modal-trigger btn light-blue" href="#modal1">New Listing</a></li> -->
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><%= @user.email if @user.email %><i class="material-icons right">arrow_drop_down</i></a></li>
       <% else %>
         <li><%= link_to('Login', new_user_session_path)  %></li>
@@ -23,14 +21,34 @@
     <div class="card white">
       <div class="card-content black-text">
        <span class="card-title"><%= @listing.address %></span>
-       <li>Posted by: <%= @listing.user.email %></li>
-       <li>Topic: <%= @listing.topic %></li>
-       <li>Price: $<%= @listing.price %></li>
-       <li>Description: <%= @listing.description %></li>
+       <p>Price: $<%= @listing.price %></p>
+       <p>Contact: <%= @listing.user.email %></p>
+       <p>Category: <%= @listing.topic %></p>
+       <p>Description: <%= @listing.description %></p>
+       <h4>Comments</h4>
+       <% @listing.comments.each do |c| %>
+        <hr>
+        <p><%= User.find(c.user_id).email %></p>
+        <blockquote>
+          <%= c.body %>
+        </blockquote>
+       <% end %>
+       <hr>
+       <h4>Add Comment</h4>
+       <%= simple_form_for Comment.new do |f| %>
+           <form>
+             <div class="row">
+               <%= hidden_field_tag 'id', @listing.id %>
+               <div class="input-field col s6">              
+                 <%= f.input :body, input_html: { class: "materialize-textarea" } %>
+               </div>
+             </div>
+             <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+             <%= f.button :submit, class: "modal-action modal-close waves-effect waves-green btn-flat"%>
+         </div>
+         </form>
+       <% end %>
      </div>
-     <% @listing.comments.each do |c| %>
-       <p>c.body</p>
-     <% end %>
-  </div>
-</div>
+     
+   </div>
 </div>

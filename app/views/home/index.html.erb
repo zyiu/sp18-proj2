@@ -67,14 +67,14 @@
           <div class="card white">
             <div class="card-content black-text">
              <span class="card-title"><%= listing.address %></span>
-             <li>Posted by: <%= listing.user.email %></li>
-             <li>Topic: <%= listing.topic %></li>
-             <li>Price: $<%= listing.price %></li>
-             <li>Description: <%= listing.description %></li>
+             <p>Price: $<%= listing.price %></p>
+             <p>Contact: <%= listing.user.email %></p>
+             <p>Category: <%= listing.topic %></p>
+             <p>Description: <%= listing.description %></p>
            </div>
            <div class="card-action">
-             <a href="">Details</a>
-             <%= button_to "💖", favorite_path(id: listing), :class => "button medium", :method => :patch %>Favorites: <%= listing.num_favorites %>
+             <%= link_to "💖 "+listing.num_favorites.to_s, favorite_path(id: listing), :class => "waves-effect btn-flat", :method => :patch %>
+             <%= link_to "Details", listing_path(listing) %>
            </div>
          </div>
        </div>

@@ -20,7 +20,7 @@ class ListingsController < ApplicationController
      @listing.favorites_user_id = current_user
      @listing.num_favorites += 1
      @listing.save
-     redirect_to root_path
+     redirect_back fallback_location: root_path
     end
   end
 

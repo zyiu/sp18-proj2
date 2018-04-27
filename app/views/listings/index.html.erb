@@ -1,5 +1,5 @@
 <ul id="dropdown1" class="dropdown-content">
-  <li><%= link_to('Your Listings', root_path, method: :get) %></li>
+  <li><%= link_to('Your Listings', home_path, method: :get) %></li>
   <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
 </ul>
 
@@ -33,9 +33,9 @@
                  
                </div>
                <div class="card-action">
-                 <a href="#">Favorite</a>
+                 <%= link_to "💖 ", favorite_path(id: listing), :class => "waves-effect btn-flat", :method => :patch %>
+                 <%= link_to "Favorites: " + listing.num_favorites.to_s  %>
                  <%= link_to "Details", listing_path(listing) %>
-                 <%= button_to "💖", favorite_path(id: listing), :class => "button medium", :method => :patch %>Favorites: <%= listing.num_favorites %>
                </div>
             </div>          
           </div>
